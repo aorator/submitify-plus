@@ -1,5 +1,5 @@
 /*
- * Submitify CF — paste-and-submit editor + live verdict tracker
+ * Submitify+: paste-and-submit editor and live verdict tracker
  * for the "Submit?" box in the Codeforces problem sidebar.
  */
 (() => {

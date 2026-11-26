@@ -1,4 +1,4 @@
-# Submitify CF
+# Submitify+
 
 Paste your solution straight into the Codeforces problem sidebar and submit it, instead of saving it to a file and uploading it through "Choose file".
 
@@ -26,14 +26,14 @@ Get the zips from the [Releases](../../releases) page, or build them yourself (s
 
 ### Vivaldi / Chrome / Brave / Edge / Arc
 
-1. Unzip `submitify-cf-chromium-v*.zip` into a folder you'll keep. The browser loads the extension from that folder.
+1. Unzip `submitify-plus-chromium-v*.zip` into a folder you'll keep. The browser loads the extension from that folder.
 2. Open `vivaldi://extensions` (or `chrome://extensions`, `brave://extensions`, `edge://extensions`).
 3. Turn on **Developer mode**.
 4. Click **Load unpacked** and pick the folder.
 
 ### Firefox
 
-**Quick test.** Open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…**, and pick `manifest.json` from the unzipped `submitify-cf-firefox-v*.zip`. Firefox removes it when you restart.
+**Quick test.** Open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…**, and pick `manifest.json` from the unzipped `submitify-plus-firefox-v*.zip`. Firefox removes it when you restart.
 
 **Permanent install.** Firefox release builds only run signed add-ons. You can sign it for free as an unlisted add-on with [AMO API keys](https://addons.mozilla.org/developers/addon/api/key/):
 
@@ -89,7 +89,7 @@ See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ## Credits
 
-Inspired by [Submity CF](https://github.com/ashrafulX/Submity-CF-Firefox) by Ashraful Islam ([announcement on Codeforces](https://codeforces.com/blog/entry/151811)), which brought back textarea submission on Codeforces. This project is a separate rewrite and contains none of its code.
+Inspired by [Submity CF](https://github.com/ashrafulX/Submity-CF-Firefox) by Ashraful Islam ([announcement on Codeforces](https://codeforces.com/blog/entry/151811)), which brought back textarea submission on Codeforces. Submitify+ is an independent rewrite. It contains none of that code and isn't affiliated with the original or with Codeforces.
 
 ## License
 

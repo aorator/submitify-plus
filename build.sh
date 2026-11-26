@@ -14,6 +14,6 @@ for target in firefox chromium; do
   cp -R src/. "$out/"
   cp "manifests/$target.json" "$out/manifest.json"
   version=$(sed -n 's/.*"version": *"\([^"]*\)".*/\1/p' "$out/manifest.json")
-  (cd "$out" && zip -qr "../submitify-cf-$target-v$version.zip" .)
-  echo "built dist/$target  ->  dist/submitify-cf-$target-v$version.zip"
+  (cd "$out" && zip -qr "../submitify-plus-$target-v$version.zip" .)
+  echo "built dist/$target  ->  dist/submitify-plus-$target-v$version.zip"
 done

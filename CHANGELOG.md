@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.1
+
+- Renamed to Submitify+ so it isn't confused with the original Submitify CF add-on. Added MIT license and credits.
+
 ## 2.2.0
 
 - Submitting opens the Codeforces status page ("My submissions") in a new tab. The problem page no longer changes.
