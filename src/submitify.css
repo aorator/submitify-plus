@@ -1,0 +1,206 @@
+/* Submitify CF — styled to sit inside Codeforces' sidebar boxes.
+   Palette taken from Codeforces itself: caption blue #3B5998, box borders #b9b9b9 / #e1e1e1,
+   verdict colours #0a0 (accepted), #00a (rejected), grey (waiting). */
+
+.submitify-hidden { display: none !important; }
+
+tr.submitify-row > td { padding: 6px 0 4px !important; }
+
+.submitify {
+  --sf-blue: #3b5998;
+  --sf-border: #b9b9b9;
+  --sf-line: #e1e1e1;
+  --sf-muted: #888;
+  --sf-gutter: #f7f7f7;
+  --sf-mono: ui-monospace, Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid var(--sf-border);
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  font: 11px/1.4 verdana, arial, sans-serif;
+  color: #222;
+  text-align: left;
+  transition: border-color .15s, box-shadow .15s;
+}
+.submitify *, .submitify *::before, .submitify *::after { box-sizing: border-box; }
+
+.submitify:focus-within {
+  border-color: var(--sf-blue);
+  box-shadow: 0 0 0 2px rgba(59, 89, 152, .15);
+}
+.submitify.is-dragging {
+  border-style: dashed;
+  border-color: var(--sf-blue);
+  background: #f3f6fb;
+}
+.submitify.is-busy .submitify-body { opacity: .6; }
+
+/* toolbar */
+.submitify-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #f8f8f8;
+  border-bottom: 1px solid var(--sf-line);
+}
+.submitify-title { display: flex; align-items: center; gap: 6px; font-weight: bold; color: var(--sf-blue); min-width: 0; }
+.submitify-lang {
+  font-weight: normal;
+  color: #555;
+  background: #fff;
+  border: 1px solid var(--sf-line);
+  border-radius: 3px;
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+.submitify-actions { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+.submitify-sep { color: #ccc; }
+.submitify-link {
+  all: unset;
+  cursor: pointer;
+  color: var(--sf-blue);
+  font: inherit;
+}
+.submitify-link:hover { text-decoration: underline; }
+.submitify-link:focus-visible { outline: 2px solid var(--sf-blue); outline-offset: 1px; border-radius: 2px; }
+
+/* editor body */
+.submitify-body {
+  display: flex;
+  height: 280px;
+  min-height: 120px;
+  max-height: 80vh;
+  resize: vertical;
+  overflow: hidden;
+}
+.submitify-gutter,
+.submitify .submitify-textarea {
+  font-family: var(--sf-mono);
+  font-size: 12px;
+  line-height: 18px;
+}
+.submitify-gutter {
+  flex: none;
+  min-width: 34px;
+  padding: 8px 6px 32px 6px;
+  text-align: right;
+  white-space: pre;
+  color: #aaa;
+  background: var(--sf-gutter);
+  border-right: 1px solid var(--sf-line);
+  overflow: hidden;
+  user-select: none;
+}
+.submitify .submitify-textarea {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 8px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  resize: none;
+  box-shadow: none;
+  background: transparent;
+  color: #222;
+  white-space: pre;
+  overflow: auto;
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+.submitify .submitify-textarea::placeholder { color: #aaa; font-family: verdana, arial, sans-serif; font-size: 11px; }
+
+/* footer */
+.submitify-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 8px;
+  border-top: 1px solid var(--sf-line);
+  background: #f8f8f8;
+  color: var(--sf-muted);
+  font-size: 10px;
+}
+.submitify-note { margin-left: 6px; color: var(--sf-blue); }
+.submitify.is-too-big .submitify-count { color: #c00; font-weight: bold; }
+.submitify-hint { white-space: nowrap; }
+.submitify-hint kbd {
+  display: inline-block;
+  min-width: 14px;
+  padding: 0 3px;
+  margin-right: 2px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: #fff;
+  font: 10px/13px verdana, arial, sans-serif;
+  text-align: center;
+  color: #555;
+}
+
+/* verdict panel */
+.submitify-status {
+  display: none;
+  margin: 8px 0 2px;
+  padding: 7px 10px;
+  border: 1px solid #e1e1e1;
+  border-left-width: 3px;
+  border-radius: 4px;
+  background: #fafafa;
+  font: 12px/1.45 verdana, arial, sans-serif;
+  text-align: left;
+}
+.submitify-status.is-visible { display: block; }
+.submitify-status.is-waiting  { border-left-color: #aaa; }
+.submitify-status.is-accepted { border-left-color: #0a0; background: #f4fbf4; }
+.submitify-status.is-rejected { border-left-color: #00a; background: #f5f5fc; }
+.submitify-status.is-error    { border-left-color: #c00; background: #fdf4f4; }
+.submitify-status.is-info     { border-left-color: var(--sf-blue, #3b5998); }
+
+.submitify-verdict { display: flex; align-items: center; gap: 7px; font-weight: bold; }
+.is-waiting  .submitify-verdict { color: gray; font-weight: normal; }
+.is-accepted .submitify-verdict { color: #0a0; }
+.is-rejected .submitify-verdict { color: #00a; }
+.is-error    .submitify-verdict { color: #c00; font-weight: normal; }
+.is-info     .submitify-verdict { color: #333; font-weight: normal; }
+
+.submitify-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #888;
+}
+.submitify-meta a { color: #3b5998; }
+.submitify-status-actions { margin-top: 6px; }
+.submitify-btn {
+  font: 11px verdana, arial, sans-serif;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.submitify-spinner {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ddd;
+  border-top-color: #888;
+  border-radius: 50%;
+  animation: submitify-spin .8s linear infinite;
+}
+@keyframes submitify-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .submitify-spinner { animation-duration: 2.4s; }
+  .submitify { transition: none; }
+}
