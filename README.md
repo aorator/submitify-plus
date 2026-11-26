@@ -86,3 +86,11 @@ build.sh             produces dist/firefox and dist/chromium
 ```
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
+
+## Credits
+
+Inspired by [Submity CF](https://github.com/ashrafulX/Submity-CF-Firefox) by Ashraful Islam ([announcement on Codeforces](https://codeforces.com/blog/entry/151811)), which brought back textarea submission on Codeforces. This project is a separate rewrite and contains none of its code.
+
+## License
+
+[MIT](LICENSE)
