@@ -2,7 +2,8 @@
 
 Paste your solution straight into the Codeforces problem sidebar and submit it, instead of saving it to a file and uploading it through "Choose file".
 
-<img src="docs/screenshot.png" alt="Submitify editor in the Codeforces Submit sidebar, with an Accepted verdict underneath" width="300">
+<img width="485" height="793" alt="image" src="https://github.com/user-attachments/assets/279ef822-fa64-4ee5-904f-b5db84d2910d" />
+
 
 Works in Firefox and in Chromium browsers (Vivaldi, Chrome, Brave, Edge, Arc).
 
